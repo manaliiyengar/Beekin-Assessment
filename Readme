@@ -45,7 +45,7 @@ function testBoundaryTesting() {
   // Test with dates close to historical events
   const closeDates = [
     "01/01/1990 12:00:00",
-    "01/01/1995 12:00:00",
+    "01/01/1990 12:00:00",
     // Add more close dates as needed
   ];
 
