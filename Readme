@@ -1,0 +1,69 @@
+// Import or define the getHistoricalEvents function
+
+function runTests() {
+  testInputValidation();
+  testDataAccuracy();
+  testBoundaryTesting();
+  testErrorHandling();
+}
+
+function testInputValidation() {
+  // Test various date and time formats
+  const validFormats = [
+    "MM/DD/YYYY HH:mm:ss",
+    "YYYY-MM-DDTHH:mm:ss",
+    // Add more valid formats as needed
+  ];
+
+  validFormats.forEach((format) => {
+    const result = getHistoricalEvents("01/01/2000 12:00:00", 5);
+    // Assert that the result is as expected
+    // (e.g., check if the result is an array of historical events)
+  });
+
+  // Test invalid date and time formats
+  const invalidFormats = [
+    "invalid format",
+    "2022-01-01T12:00:00",
+    // Add more invalid formats as needed
+  ];
+
+  invalidFormats.forEach((format) => {
+    const result = getHistoricalEvents(format, 5);
+    // Assert that the result is an error or a meaningful error message
+  });
+}
+
+function testDataAccuracy() {
+  // Test events corresponding accurately to input date and time
+  const inputDateTime = "01/01/2000 12:00:00";
+  const result = getHistoricalEvents(inputDateTime, 5);
+  // Assert that the events in the result correspond to the input date and time
+}
+
+function testBoundaryTesting() {
+  // Test with dates close to historical events
+  const closeDates = [
+    "01/01/1990 12:00:00",
+    "01/01/1995 12:00:00",
+    // Add more close dates as needed
+  ];
+
+  closeDates.forEach((date) => {
+    const result = getHistoricalEvents(date, 5);
+    // Assert that the result does not contain future events
+  });
+}
+
+function testErrorHandling() {
+  // Test error handling scenarios
+  const invalidInput = "invalid input";
+  const result = getHistoricalEvents(invalidInput, 5);
+  // Assert that the result is an error or a meaningful error message
+
+  // Test handling network errors or server issues
+  // Simulate network errors and assert the expected behavior
+}
+
+// Run the test suite
+runTests();
